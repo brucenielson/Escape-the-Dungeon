@@ -415,15 +415,15 @@ public class HeroController : MonoBehaviour
         if (itemHolder.nearItem != null)
             if (itemHolder.nearItem.tag == "Interact")
             {
-                pullLever lever1 = itemHolder.nearItem.GetComponent<pullLever>();
-                if (lever1 != null)
-                    lever1.PullLever();
-                FloorLever lever2 = itemHolder.nearItem.GetComponentInParent<FloorLever>();
-                if (lever2 != null)
-                    lever2.ActivateObject();
-                FloorLeverPuzzle lever3 = itemHolder.nearItem.GetComponentInParent<FloorLeverPuzzle>();
-                if (lever3 != null)
-                    lever3.ActivateObject();
+                //pullLever lever1 = itemHolder.nearItem.GetComponent<pullLever>();
+                //if (lever1 != null)
+                //    lever1.PullLever();
+                //FloorLever lever2 = itemHolder.nearItem.GetComponentInParent<FloorLever>();
+                //if (lever2 != null)
+                //    lever2.ActivateObject();
+                //FloorLeverPuzzle lever3 = itemHolder.nearItem.GetComponentInParent<FloorLeverPuzzle>();
+                //if (lever3 != null)
+                //    lever3.ActivateObject();
             }
             else
                 itemHolder.ReceiveItem(itemHolder.nearItem);
