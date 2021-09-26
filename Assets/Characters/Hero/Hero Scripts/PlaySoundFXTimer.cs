@@ -10,12 +10,6 @@ public class PlaySoundFXTimer : MonoBehaviour
     public float volume = 1.0f;
     private AudioSource audioSource;
 
-    // Start is called before the first frame update
-    void Start()
-    {
- 
-       
-    }
 
     public void PlaySoundTimer()
     {
@@ -25,10 +19,6 @@ public class PlaySoundFXTimer : MonoBehaviour
         audioSource.loop = false;
         audioSource.PlayDelayed(delay);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
+
+
