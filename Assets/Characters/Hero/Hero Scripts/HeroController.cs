@@ -11,7 +11,7 @@ public class HeroController : MonoBehaviour
     private Animator anim;
     private Rigidbody rbody;
     private CharacterInputController cinput;
-    
+
     // Camera variables
     private Vector3 originalCameraPos;
     private Vector3 offset = new Vector3(0f, 1.8f, 0f);
@@ -76,7 +76,7 @@ public class HeroController : MonoBehaviour
 
         anim.SetBool("grounded", true);
         anim.SetBool("jump", false);
-        startJump = -1f; 
+        startJump = -1f;
         startCameraRotation = currentCamera.transform.localRotation;
         heroCollider = GetComponent<CapsuleCollider>();
         origSizeCollider = heroCollider.height;
@@ -105,17 +105,17 @@ public class HeroController : MonoBehaviour
         }
 
         // Example of how to adjust animation speed programatically. 1.0 = normal animation speed.
-        
+
 
         if (inputForward >= 0)
-            anim.speed = animationSpeed; 
+            anim.speed = animationSpeed;
 
 
         // Play animations
         anim.SetFloat("vely", inputForward);
         anim.SetFloat("strafe", inputStrafe);
 
-        HoldItem itemHolder = GetComponent<HoldItem>(); 
+        HoldItem itemHolder = GetComponent<HoldItem>();
         MatchTargetForAnimation("Pickup Object", itemHolder.nearItem, 0.657f, 0.6f);
         MatchTargetForAnimation("Grab Object", itemHolder.nearItem, 0.538f, 1.25f);
         MatchTargetForAnimation("Place Tablet", interactionObject, 0.538f, 2.0f);
@@ -183,7 +183,7 @@ public class HeroController : MonoBehaviour
     private void FixedUpdate()
     {
         mesh.enabled = true;
-        // Cast a ray from player to camera to see if there is something blocking camera 
+        // Cast a ray from player to camera to see if there is something blocking camera
         startPos = transform.position + offset;
         dirToCamera = transform.TransformPoint(originalCameraPos) - startPos;
         Ray ray = new Ray(startPos, dirToCamera);
@@ -222,7 +222,7 @@ public class HeroController : MonoBehaviour
 
     private void OnAnimatorMove()
     {
-         
+
         bool isGrounded;
         bool isNearGround;
         float sinceJump = Time.time - startJump;
@@ -428,7 +428,7 @@ public class HeroController : MonoBehaviour
             else
                 itemHolder.ReceiveItem(itemHolder.nearItem);
     }
-    
+
 
     private void OnJump(int type)
     {
@@ -481,7 +481,7 @@ public class HeroController : MonoBehaviour
     private void PlaceTablet()
     {
         if (interactionObject != null)
-        { 
+        {
             HoldItem heldItem = GetComponent<HoldItem>();
             GameObject tablet = heldItem.heldItem;
             GameObject slot = interactionObject.transform.Find("Slot").gameObject;

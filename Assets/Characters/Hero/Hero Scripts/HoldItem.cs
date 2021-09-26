@@ -18,7 +18,7 @@ public class HoldItem : MonoBehaviour
         if (heldItem != null)
             ReceiveItem(heldItem, true);
 
-        uiTextBox = GameObject.Find("Inventory Text").GetComponent<TextMeshProUGUI>();
+        //uiTextBox = GameObject.Find("Inventory Text").GetComponent<TextMeshProUGUI>();
 
 
     }
@@ -54,7 +54,7 @@ public class HoldItem : MonoBehaviour
         // Signal to player that we are near an item that can be picked up
         // Get the text box that shows what item you're over
         nearItem = item;
-        uiTextBox.text = "Press (A) or [Ctrl] to  Pick Up " + item.name;
+        //uiTextBox.text = "Press (A) or [Ctrl] to  Pick Up " + item.name;
     }
 
     private void SignalNearInteract(GameObject interactObject)
@@ -76,7 +76,7 @@ public class HoldItem : MonoBehaviour
         if (other.tag == "Holdable Item")
             SignalNearItem(other);
         else if (other.tag == "Interact")
-        {            
+        {
             SignalNearInteract(other.gameObject);
         }
     }
@@ -87,7 +87,7 @@ public class HoldItem : MonoBehaviour
             if (nearItem != null && other.gameObject == nearItem)
             {
                 nearItem = null;
-                uiTextBox.text = "";
+                //uiTextBox.text = "";
             }
     }
 }
