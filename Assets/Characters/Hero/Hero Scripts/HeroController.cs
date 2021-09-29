@@ -83,7 +83,7 @@ public class HeroController : MonoBehaviour
         origCenterCollider = heroCollider.center;
 
         // Grab mesh renderer
-        Transform child = transform.Find("Dreyar");
+        Transform child = transform.Find("Kachujin");
         mesh = child.GetComponent<SkinnedMeshRenderer>();
     }
 
